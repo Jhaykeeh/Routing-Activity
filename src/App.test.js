@@ -1,8 +1,16 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import CategoryPage from './ecommerce/CategoryPage';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders ecommerce products for a selected category', () => {
+  render(
+    <MemoryRouter initialEntries={['/ecommerce/category/electronics']}>
+      <Routes>
+        <Route path="/ecommerce/category/:categoryName" element={<CategoryPage />} />
+      </Routes>
+    </MemoryRouter>
+  );
+
+  expect(screen.getByText(/Electronics Collection/i)).toBeInTheDocument();
+  expect(screen.getByText(/MacBook Air/i)).toBeInTheDocument();
 });
