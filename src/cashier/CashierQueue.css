@@ -1,10 +1,85 @@
-
-button {
-
+.cashier-simulator {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  padding: 24px;
 }
-sidebar {
-  background-color: cyan;
+
+.control-card,
+.cashier-card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
 }
-#custlength{
-  color: red;
+
+.control-card h2,
+.cashier-card h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.control-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.control-buttons button {
+  border: none;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  border-radius: 999px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.queue-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.queue-list li {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.cashier-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+}
+
+.cashier-item h4 {
+  margin: 0 0 8px;
+}
+
+.cashier-status {
+  margin: 0 0 8px;
+  color: #374151;
+}
+
+.cashier-status.active {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.cashier-status.idle {
+  color: #6b7280;
+}
+
+@media (max-width: 900px) {
+  .cashier-simulator {
+    grid-template-columns: 1fr;
+  }
 }

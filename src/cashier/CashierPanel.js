@@ -6,7 +6,7 @@ const CashierPanel = () => {
   const { state } = useContext(CashierQueueContext);
 
   return (
-    <div>
+    <div className="cashier-card">
       <h2>Cashiers</h2>
       {state.cashiers.map(c => (
         <Cashier key={c.id} cashier={c} />
